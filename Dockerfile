@@ -39,7 +39,7 @@ RUN mkdir /tmp/tmod && \
 COPY run-tmodloader.sh /terraria/run.sh
 
 # Allow for external data
-VOLUME ["/config", "/ModLoader", "/Worlds"]
+VOLUME ["/config", "/ModLoader"]
 
 # Run the server
 WORKDIR /terraria

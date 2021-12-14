@@ -12,12 +12,6 @@ if [ ! -f "/config/banlist.txt" ]; then
     touch /config/banlist.txt
 fi
 
-# Link Worlds folder to /Worlds so it will save to the correct location
-if [ ! -s "/root/.local/share/Terraria/Worlds" ]; then
-    mkdir -p /root/.local/share/Terraria
-    ln -sT /Worlds /root/.local/share/Terraria/Worlds
-fi
-
 # Link ModLoader folder to /ModLoader so it will save to the correct location
 if [ ! -s "/root/.local/share/Terraria/ModLoader" ]; then
     ln -sT /ModLoader /root/.local/share/Terraria/ModLoader
@@ -25,11 +19,11 @@ fi
 
 # Pass in world if set
 if [ "${WORLD:-null}" != null ]; then
-    if [ ! -f "/Worlds/$WORLD" ]; then
+    if [ ! -f "/ModLoader/Worlds/$WORLD" ]; then
         echo "World file does not exist! Quitting..."
         exit 1
     fi
-    CMD="$CMD -world /Worlds/$WORLD"
+    CMD="$CMD -world /ModLoader/Worlds/$WORLD"
 fi
 
 echo "Starting container, CMD: $CMD $@"
