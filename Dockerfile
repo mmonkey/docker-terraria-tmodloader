@@ -31,7 +31,7 @@ RUN mkdir /tmp/tmod && \
     curl -sL https://github.com/tModLoader/tModLoader/releases/download/v$TMOD_VERSION/tModLoader.Linux.v$TMOD_VERSION.zip --output tmodloader.zip && \
     unzip -q tmodloader.zip && \
     rm -R ./tmodloader.zip && \
-    mv ./* /terraria && \
+    cp -r ./* /terraria && \
     rm -Rf /tmp/* && \
     chmod u+x /terraria/tModLoaderServer* && \
     if [ ! -f /terraria/tModLoaderServer ]; then echo "Missing /terraria/tModLoaderServer"; exit 1; fi
