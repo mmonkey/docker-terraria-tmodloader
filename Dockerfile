@@ -15,7 +15,7 @@ ENV TERRARIA_VERSION=1353
 
 RUN mkdir /tmp/terraria && \
     cd /tmp/terraria && \
-    curl -sLO https://www.terraria.org/server/terraria-server-$TERRARIA_VERSION.zip --output terraria-server.zip && \
+    curl -sLO "https://www.terraria.org/server/terraria-server-${TERRARIA_VERSION}.zip" --output terraria-server.zip && \
     unzip -q terraria-server.zip && \
     mv */Linux /terraria && \
     mv */Windows/serverconfig.txt /terraria/serverconfig-default.txt && \
@@ -28,7 +28,7 @@ ENV TMOD_VERSION=0.11.8.5
 
 RUN mkdir /tmp/tmod && \
     cd /tmp/tmod &&\
-    curl -sL https://github.com/tModLoader/tModLoader/releases/download/v$TMOD_VERSION/tModLoader.Linux.v$TMOD_VERSION.zip --output tmodloader.zip && \
+    curl -sL "https://github.com/tModLoader/tModLoader/releases/download/v${TMOD_VERSION}/tModLoader.Linux.v${TMOD_VERSION}.zip" --output tmodloader.zip && \
     unzip -q tmodloader.zip && \
     rm -R ./tmodloader.zip && \
     mv ./* /terraria && \
