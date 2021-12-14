@@ -14,6 +14,7 @@ fi
 
 # Link ModLoader folder to /ModLoader so it will save to the correct location
 if [ ! -s "/root/.local/share/Terraria/ModLoader" ]; then
+	mkdir -p /root/.local/share/Terraria
     ln -sT /ModLoader /root/.local/share/Terraria/ModLoader
 fi
 
