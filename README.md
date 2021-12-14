@@ -1,6 +1,6 @@
-# docker-terraria-tmodloader
+# terraria-tmodloader
 
-Docker image to run a [Terraria](https://www.terraria.org/) server with [tModLoader](https://www.tmodloader.net/). Heavily inspired by [beardedo/terraria](https://github.com/beardedio/terraria) docker image.
+Docker image to run a [Terraria](https://www.terraria.org/) server with [tModLoader](https://www.tmodloader.net/). Heavily inspired by [beardedio/terraria](https://github.com/beardedio/terraria) docker image.
 
 ## Usage
 
@@ -13,10 +13,10 @@ docker run --rm -it \
   -e WORLD=<world_file_name> \
   -p 7777:7777 \
   --name=terraria \
-  mmonkey/docker-terraria-tmodloader
+  mmonkey/terraria-tmodloader
 ```
 
-Docker image is availabe on [Docker Hub](https://hub.docker.com/r/mmonkey/docker-terraria-tmodloader).
+Docker image is availabe on [Docker Hub](https://hub.docker.com/r/mmonkey/terraria-tmodloader).
 
 ## How to Use
 
@@ -32,7 +32,7 @@ docker run --rm -it \
   -e TMOD_VERSION=0.11.8.5 \
   -p 7777:7777 \
   --name=terraria \
-  mmonkey/docker-terraria-tmodloader
+  mmonkey/terraria-tmodloader
 ```
 
 ### Starting with a Preexisting World
@@ -48,7 +48,7 @@ docker run --rm -dit \
   -e WORLD=<world_file_name> \
   -p 7777:7777 \
   --name=terraria \
-  mmonkey/docker-terraria-tmodloader
+  mmonkey/terraria-tmodloader
 ```
 
 ### Docker Compose
@@ -60,7 +60,7 @@ version: '3'
 
 services:
   terraria:
-    image: mmonkey/docker-terraria-tmodloader
+    image: mmonkey/terraria-tmodloader
     ports:
       - '7777:7777'
     restart: unless-stopped
