@@ -15,7 +15,7 @@ ENV TERRARIA_VERSION=1353
 
 RUN mkdir /tmp/terraria && \
     cd /tmp/terraria && \
-    curl -sL https://www.terraria.org/api/download/pc-dedicated-server/terraria-server-$TERRARIA_VERSION.zip --output terraria-server.zip && \
+    curl -sLO https://www.terraria.org/server/terraria-server-$TERRARIA_VERSION.zip --output terraria-server.zip && \
     unzip -q terraria-server.zip && \
     mv */Linux /terraria && \
     mv */Windows/serverconfig.txt /terraria/serverconfig-default.txt && \
